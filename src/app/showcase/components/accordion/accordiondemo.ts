@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {MessageService} from '../../../components/common/messageservice';
+import { AccordionEvent } from 'src/app/components/accordion/accordion.model';
 
 @Component({
     templateUrl: './accordiondemo.html',
@@ -11,11 +12,11 @@ export class AccordionDemo {
 
     constructor(private messageService: MessageService) {}
 
-    onTabClose(event) {
-        this.messageService.add({severity:'info', summary:'Tab Closed', detail: 'Index: ' + event.index})
+    onTabClose(event: AccordionEvent) {
+        this.messageService.add({severity:'info', summary:'Tab Closed', detail: 'Index: ' + event.index});
     }
     
-    onTabOpen(event) {
+    onTabOpen(event: AccordionEvent) {
         this.messageService.add({severity:'info', summary:'Tab Expanded', detail: 'Index: ' + event.index});
     }
     

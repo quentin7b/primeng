@@ -357,6 +357,7 @@ export class AccordionDemo &#123;
                         <tr>
                             <td>onClose</td>
                             <td>
+                                event as an <code class="language-markup">AccordionEvent</code><br>
                                 event.originalEvent: Click object<br>
                                 event.index: Index of the tab
                             </td>
@@ -365,6 +366,7 @@ export class AccordionDemo &#123;
                         <tr>
                             <td>onOpen</td>
                             <td>
+                                event as an <code class="language-markup">AccordionEvent</code><br>
                                 event.originalEvent: Click object<br>
                                 event.index: Index of the tab
                             </td>
@@ -381,7 +383,7 @@ export class AccordionDemo &#123;
 
 <pre>
 <code class="language-typescript" pCode ngNonBindable>
-onTabOpen(e) &#123;
+onTabOpen(e: AccordionEvent) &#123;
     var index = e.index;
 &#125;
 </code>

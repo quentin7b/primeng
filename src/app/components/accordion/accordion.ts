@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule, Header, PrimeTemplate } from '../common/shared';
 import { BlockableUI } from '../common/blockableui';
 import { Subscription } from 'rxjs';
+import { AccordionEvent } from './accordion.model';
 
 let idx: number = 0;
 
@@ -59,7 +60,7 @@ export class AccordionTab implements OnDestroy {
 
     @Input() cache: boolean = true;
 
-    @Output() selectedChange: EventEmitter<any> = new EventEmitter();
+    @Output() selectedChange: EventEmitter<boolean> = new EventEmitter();
 
     @Input() transitionOptions: string = '400ms cubic-bezier(0.86, 0, 0.07, 1)';
 
@@ -176,9 +177,9 @@ export class Accordion implements BlockableUI, AfterContentInit, OnDestroy {
     
     @Input() multiple: boolean;
     
-    @Output() onClose: EventEmitter<any> = new EventEmitter();
+    @Output() onClose: EventEmitter<AccordionEvent> = new EventEmitter();
 
-    @Output() onOpen: EventEmitter<any> = new EventEmitter();
+    @Output() onOpen: EventEmitter<AccordionEvent> = new EventEmitter();
 
     @Input() style: any;
     
